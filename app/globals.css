@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Nunito, sans-serif;
+}
+
+@layer components {
+  .karaoke-text::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(to right, white 0%, white calc(100% - 30px), rgba(255, 255, 255, 0) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition-duration) cubic-bezier(.34,.64,.65,.82);
+  }
+
+  .karaoke-text.highlighted::before {
+    width: calc(100% + 30px);
+  }
+
+  .karaoke-text.highlighted.done::before {
+    opacity: 0.50;
+  }
+
+  .karaoke-text.highlighted.done.very::before {
+    display: none;
+  }
+
+  .karaoke-text.highlighted.done.very {
+    color: rgba(255, 255, 255, 0.676)
+  }
+
+  @keyframes bluralbumbganim {
+    0% {
+      transform: scale(1.2) rotate(0deg);
+    }
+
+    100%{
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+
+  .bluralbumbg {
+    animation: bluralbumbganim 450s linear infinite;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+
+  .filterlead {
+    filter: invert(72%) sepia(65%) saturate(445%) hue-rotate(83deg) brightness(95%) contrast(86%);
+  }
+
+  .filterbackground {
+    filter: invert(55%) sepia(96%) saturate(348%) hue-rotate(156deg) brightness(97%) contrast(100%);
+  }
+
+  .filterduet {
+    filter: invert(53%) sepia(95%) saturate(537%) hue-rotate(232deg) brightness(97%) contrast(101%);
+  }
+
+  .filterwhite {
+    filter: invert(99%) sepia(0%) saturate(431%) hue-rotate(6deg) brightness(110%) contrast(100%);
+    user-select: none;
+  }
+}
+
+html, body, body > #root {
+  height: 100%;
+}
