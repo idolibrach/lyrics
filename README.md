@@ -2,7 +2,7 @@
 
 Bakbak Lyrics is a full-stack, community-driven platform for creating and playing **syllable-level synced lyrics** for Spotify songs. Users can search any track on Spotify, sync its lyrics in a purpose-built editor while the song plays, and then watch the result in an animated karaoke-style player that highlights each syllable as it's sung. It supports lead, background and duet vocals, so complex songs display the way they're actually performed.
 
-https://i.ibb.co/YB77LDS1/image.png
+![Preview](https://i.ibb.co/YB77LDS1/image.png)
 
 ## 📁 Project Structure
 
